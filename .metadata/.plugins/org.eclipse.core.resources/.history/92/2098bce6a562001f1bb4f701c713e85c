@@ -1,0 +1,78 @@
+package com.example.lib.Integration;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.example.lib.Repository.UserRepository;
+import com.example.lib.Service.UserService;
+import com.example.lib.model.User;
+
+import java.util.Optional;
+import java.util.Set;
+
+@SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
+public class UserServiceIntegrationTest {
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Test
+    void testCreateAndRetrieveUser() {
+        // Arrange
+        User user = new User(0, "user1", "password1", Set.of("ROLE_USER"));
+
+        // Act
+        User savedUser = userService.createUser(user);
+        Optional<User> retrievedUser = userService.getUserById(savedUser.getId());
+
+        // Assert
+        assertTrue(retrievedUser.isPresent());
+        assertEquals("user1", retrievedUser.get().getUsername());
+    }
+
+    @Test
+    void testUpdateUser() {
+        // Arrange
+        User user = new User(0, "user1", "password1", Set.of("ROLE_USER"));
+        User savedUser = userService.createUser(user);
+
+        User updatedUser = new User(0, "updatedUser", "newPassword", Set.of("ROLE_ADMIN"));
+
+        // Act
+        User result = userService.updateUser(savedUser.getId(), updatedUser);
+        Optional<User> retrievedUser = userService.getUserById(savedUser.getId());
+
+        // Assert
+        assertTrue(retrievedUser.isPresent());
+        assertEquals("updatedUser", retrievedUser.get().getUsername());
+        assertTrue(passwordEncoder.matches("newPassword", retrievedUser.get().getPassword()));
+    }
+
+    @Test
+    void testDeleteUser() {
+        // Arrange
+        User user = new User(0, "user1", "password1", Set.of("ROLE_USER"));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        User savedUser = userService.createUser(user);
+
+        // Act
+        userService.deleteUser(savedUser.getId());
+        Optional<User> retrievedUser = userService.getUserById(savedUser.getId());
+
+        // Assert
+        assertFalse(retrievedUser.isPresent());
+    }
+}

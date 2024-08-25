@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookServiceTest" project="lib" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.lib.Unit.BookServiceTest" time="2.669" displayname="BookServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.BookServiceTest]">
+    <testcase name="testSaveBook" classname="com.example.lib.Unit.BookServiceTest" time="2.648" displayname="testSaveBook()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.BookServiceTest]/[method:testSaveBook()]"/>
+    <testcase name="testGetAllBooks" classname="com.example.lib.Unit.BookServiceTest" time="0.004" displayname="testGetAllBooks()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.BookServiceTest]/[method:testGetAllBooks()]"/>
+    <testcase name="testGetBookById" classname="com.example.lib.Unit.BookServiceTest" time="0.007" displayname="testGetBookById()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.BookServiceTest]/[method:testGetBookById()]"/>
+    <testcase name="testDeleteBook" classname="com.example.lib.Unit.BookServiceTest" time="0.005" displayname="testDeleteBook()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.BookServiceTest]/[method:testDeleteBook()]"/>
+  </testsuite>
+</testrun>

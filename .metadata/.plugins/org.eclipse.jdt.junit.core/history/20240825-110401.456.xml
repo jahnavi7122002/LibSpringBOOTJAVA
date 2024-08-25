@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest" project="lib" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.lib.Unit.UserServiceTest" time="1.709" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]">
+    <testcase name="testGetAllUsers" classname="com.example.lib.Unit.UserServiceTest" time="1.655" displayname="testGetAllUsers()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testGetAllUsers()]"/>
+    <testcase name="testUpdateUser" classname="com.example.lib.Unit.UserServiceTest" time="0.014" displayname="testUpdateUser()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testUpdateUser()]"/>
+    <testcase name="testFindByUsername" classname="com.example.lib.Unit.UserServiceTest" time="0.006" displayname="testFindByUsername()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testFindByUsername()]"/>
+    <testcase name="testCreateUser" classname="com.example.lib.Unit.UserServiceTest" time="0.005" displayname="testCreateUser()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testCreateUser()]"/>
+    <testcase name="testDeleteUser" classname="com.example.lib.Unit.UserServiceTest" time="0.014" displayname="testDeleteUser()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testDeleteUser()]"/>
+    <testcase name="testGetUserById" classname="com.example.lib.Unit.UserServiceTest" time="0.006" displayname="testGetUserById()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testGetUserById()]"/>
+  </testsuite>
+</testrun>

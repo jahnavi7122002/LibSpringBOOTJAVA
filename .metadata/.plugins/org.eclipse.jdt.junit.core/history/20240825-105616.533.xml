@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest" project="lib" tests="7" started="7" failures="1" errors="2" ignored="0">
+  <testsuite name="com.example.lib.Unit.UserServiceTest" time="1.687" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]">
+    <testcase name="testGetAllUsers" classname="com.example.lib.Unit.UserServiceTest" time="1.576" displayname="testGetAllUsers()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testGetAllUsers()]"/>
+    <testcase name="testUpdateUser" classname="com.example.lib.Unit.UserServiceTest" time="0.021" displayname="testUpdateUser()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testUpdateUser()]">
+      <error>java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because "null" is null&#13;
+	at com.example.lib.Unit.UserServiceTest.testUpdateUser(UserServiceTest.java:85)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testFindByUsername" classname="com.example.lib.Unit.UserServiceTest" time="0.014" displayname="testFindByUsername()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testFindByUsername()]"/>
+    <testcase name="testCreateUser" classname="com.example.lib.Unit.UserServiceTest" time="0.006" displayname="testCreateUser()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testCreateUser()]">
+      <error>java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because "null" is null&#13;
+	at com.example.lib.Unit.UserServiceTest.testCreateUser(UserServiceTest.java:68)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testDeleteUser" classname="com.example.lib.Unit.UserServiceTest" time="0.025" displayname="testDeleteUser()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testDeleteUser()]"/>
+    <testcase name="testGetUserById" classname="com.example.lib.Unit.UserServiceTest" time="0.016" displayname="testGetUserById()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testGetUserById()]"/>
+    <testcase name="testIsPasswordCorrect" classname="com.example.lib.Unit.UserServiceTest" time="0.014" displayname="testIsPasswordCorrect()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Unit.UserServiceTest]/[method:testIsPasswordCorrect()]">
+      <failure>
+        <expected>true</expected>
+        <actual>false</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;&#13;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)&#13;
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)&#13;
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)&#13;
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)&#13;
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)&#13;
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)&#13;
+	at com.example.lib.Unit.UserServiceTest.testIsPasswordCorrect(UserServiceTest.java:132)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>

@@ -1,0 +1,48 @@
+package com.example.lib.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .csrf().disable() // Disable CSRF for simplicity (consider enabling it in production)
+            .authorizeRequests()
+                .antMatchers("/books/**").hasRole("LIBRARIAN") // Only librarians can manage books
+                .antMatchers("/users/**").permitAll() // Anyone can access user management
+                .anyRequest().authenticated() // All other requests require authentication
+                .and()
+            .formLogin() // Enable form login for simplicity
+                .permitAll()
+                .and()
+            .httpBasic(); // Enable HTTP Basic authentication
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+            .inMemoryAuthentication()
+            .withUser("librarian")
+                .password(passwordEncoder().encode("password"))
+                .roles("LIBRARIAN")
+            .and()
+            .withUser("patron")
+                .password(passwordEncoder().encode("password"))
+                .roles("PATRON");
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}

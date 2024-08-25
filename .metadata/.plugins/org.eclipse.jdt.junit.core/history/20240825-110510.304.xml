@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookServiceIntegrationTest" project="lib" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.lib.Integration.BookServiceIntegrationTest" time="0.959" displayname="BookServiceIntegrationTest" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Integration.BookServiceIntegrationTest]">
+    <testcase name="testSaveAndRetrieveBook" classname="com.example.lib.Integration.BookServiceIntegrationTest" time="0.94" displayname="testSaveAndRetrieveBook()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Integration.BookServiceIntegrationTest]/[method:testSaveAndRetrieveBook()]"/>
+    <testcase name="testDeleteBook" classname="com.example.lib.Integration.BookServiceIntegrationTest" time="0.017" displayname="testDeleteBook()" uniqueid="[engine:junit-jupiter]/[class:com.example.lib.Integration.BookServiceIntegrationTest]/[method:testDeleteBook()]"/>
+  </testsuite>
+</testrun>

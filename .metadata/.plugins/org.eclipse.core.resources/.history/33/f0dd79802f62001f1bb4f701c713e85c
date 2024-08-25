@@ -1,0 +1,6 @@
+package com.example.lib.model;
+
+public enum ERole {
+    ROLE_LIBRARIAN,
+    ROLE_PATRON
+}
